@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane fx:controller="com.igi.controller.WindowController"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="window"
+            styleClass="window"
+            prefHeight="200" prefWidth="320">
+    <top>
+        <MenuBar fx:id="menu">
+            <menus>
+                <Menu fx:id="langMenu" text="Language">
+                    <items>
+                        <MenuItem fx:id="langPl" text="Polish" onAction="#setLangPl"/>
+                        <MenuItem fx:id="langEn" text="English" onAction="#setLangEn"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="skinMenu" text="Skin">
+                    <items>
+                        <MenuItem fx:id="skin1" text="Skin 1" onAction="#setSkin1"/>
+                        <MenuItem fx:id="skin2" text="Skin 2" onAction="#setSkin2"/>
+                        <MenuItem fx:id="skin3" text="Skin 3" onAction="#setSkin3"/>
+                    </items>
+                </Menu>
+                <Menu fx:id="showingsMenu" text="Showings" disable="true">
+                    <MenuItem fx:id="findShowingsPanel" text="Find..." onAction="#showFindShowingsPanel"/>
+                    <MenuItem fx:id="myReservationsPanel" text="My reservations..." onAction="#showMyReservationsPanel"/>
+                </Menu>
+                <Menu fx:id="adminMenu" text="Admin" disable="true">
+                    <MenuItem fx:id="moviesAdminButton" text="admin panel..." onAction="#showAdminPanel"/>
+                </Menu>
+                <Menu fx:id="userMenu" text="User" disable="true">
+                    <MenuItem fx:id="logout" text="Log Out" onAction="#logout"/>
+                </Menu>
+
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+    </left>
+    <center>
+        <fx:include source="auth.fxml"/>
+    </center>
+    <right>
+
+    </right>
+    <bottom>
+
+    </bottom>
+
+</BorderPane>

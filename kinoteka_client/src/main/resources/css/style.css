@@ -1,0 +1,41 @@
+.window{
+    -fx-background-image: url("../images/back.jpg");
+    -fx-background-position: center center;
+    -fx-background-size: cover, auto;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-family: "Courier New";
+}
+
+.white-text{
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.button{
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-background-color: #333333;
+    -fx-alignment: CENTER;
+}
+
+.list{
+    -fx-background-color: #333333;
+    -fx-opacity: 0.8;
+    -fx-min-width: 250px;
+}
+
+.white-res{
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+
+.legend-normal{
+    -fx-background-color: #00e9ff;
+    -fx-padding: 10 10 10 10;
+}
+
+.legend-discount{
+    -fx-background-color: #00ff00;
+    -fx-padding: 10 10 10 10;
+}

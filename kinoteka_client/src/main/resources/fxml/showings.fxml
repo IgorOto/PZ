@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.igi.controller.ShowingsController"
+          hgap="20"
+          vgap="5">
+    <Label styleClass="white-text" text="From..." fx:id="fromLabel" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <DatePicker styleClass="white-text" fx:id="fromDate" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+    <Label styleClass="white-text" text="To..." fx:id="toLabel" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    <DatePicker styleClass="white-text" fx:id="toDate" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+    <Button fx:id="filterDate" text="show" onAction="#onFilter" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+    <Label styleClass="white-text" text="Showings" fx:id="showingsLabel" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <ListView  styleClass="list" fx:id="showingsListView" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="3" GridPane.rowSpan="6"/>
+    <AnchorPane fx:id="showingRoomBox" GridPane.columnIndex="4" GridPane.rowIndex="5">
+    </AnchorPane>
+    <Button styleClass="white-text" text="Make reservation..." fx:id="reservationButton" GridPane.columnIndex="4" GridPane.rowIndex="6" disable="true" onAction="#makeReservation"/>
+    <Label fx:id="legendNormal" styleClass="legend-normal" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+    <Label fx:id="legendDiscount" styleClass="legend-discount" GridPane.columnIndex="4" GridPane.rowIndex="7"/>
+</GridPane>

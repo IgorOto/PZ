@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.igi.controller.AuthController"
+          hgap="60"
+          vgap="10">
+
+    <Label text="Log in..." styleClass="white-text" fx:id="loginHeader" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <Label text="username" styleClass="white-text" fx:id="usernameLoginlabel" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <TextField fx:id="usernameLoginInput" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+    <Label text="password" styleClass="white-text" fx:id="passwordLoginLabel" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+    <TextField fx:id="passwordLoginInput" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+    <Button text="Log in" styleClass="button" fx:id="loginButton" GridPane.columnIndex="3" GridPane.rowIndex="8" onAction="#login"/>
+
+
+    <Label text="Register..." styleClass="white-text" fx:id="registerLabel" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+    <Label text="username" styleClass="white-text" fx:id="usernameRegisterLabel" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <TextField fx:id="usernameRegisterInput" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+    <Label text="password" styleClass="white-text" fx:id="passwordRegisterLabel" GridPane.columnIndex="4" GridPane.rowIndex="6"/>
+    <TextField fx:id="passwordRegisterInput" GridPane.columnIndex="4" GridPane.rowIndex="7"/>
+    <Label text="confirm password" styleClass="white-text" fx:id="passwordRegisterConfirmLabel" GridPane.columnIndex="4" GridPane.rowIndex="8"/>
+    <TextField fx:id="passwordRegisterConfirmInput" GridPane.columnIndex="4" GridPane.rowIndex="9"/>
+    <Button text="Register..." styleClass="button" fx:id="registerButton" GridPane.columnIndex="4" GridPane.rowIndex="10" onAction="#onRegister"/>
+
+
+</GridPane>

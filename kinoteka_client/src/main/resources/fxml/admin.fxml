@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.igi.controller.AdminController"
+          hgap="20"
+          vgap="5">
+    <Label styleClass="white-text" text="Movies" fx:id="moviesLabel" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="1"/>
+    <ListView styleClass="white-text" fx:id="movieListView" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="3" GridPane.rowSpan="20"/>
+    <Label styleClass="white-text" text="Add title" fx:id="addTitleLabel" GridPane.columnIndex="0" GridPane.rowIndex="21" GridPane.columnSpan="1"/>
+    <TextField  fx:id="addMovieInput" GridPane.columnIndex="0" GridPane.rowIndex="22" GridPane.columnSpan="1"/>
+    <Button styleClass="white-text" text="add..." fx:id="addMovieButton" GridPane.columnIndex="0" GridPane.rowIndex="23" onAction="#addMovie" GridPane.columnSpan="1"/>
+
+    <Label styleClass="white-text" text="Add showing" fx:id="addShowingLabel" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Label styleClass="white-text" text="Movie" fx:id="movieLabel" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <ChoiceBox  fx:id="moviesChoiceBox" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Label styleClass="white-text" text="Room" fx:id="roomLabel" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <ChoiceBox fx:id="roomChoiceBox" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Label styleClass="white-text" text="Date" fx:id="dateLabel" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <DatePicker fx:id="showingDateInput" GridPane.columnIndex="4" GridPane.rowIndex="6" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Label styleClass="white-text" text="Start time hh:mm" fx:id="startTimeLabel" GridPane.columnIndex="4" GridPane.rowIndex="7" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <TextField fx:id="startTimeInput" GridPane.columnIndex="4" GridPane.rowIndex="8" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Label styleClass="white-text" text="End time hh:mm" fx:id="endTimeLabel" GridPane.columnIndex="4" GridPane.rowIndex="9" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <TextField fx:id="endTimeInput" GridPane.columnIndex="4" GridPane.rowIndex="10" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+    <Button styleClass="white-text" text="add..." fx:id="addShowingButton" GridPane.columnIndex="4" GridPane.rowIndex="11" onAction="#addShowing" GridPane.columnSpan="1" GridPane.rowSpan="1"/>
+</GridPane>
