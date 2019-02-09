@@ -1,0 +1,161 @@
+<div>
+    <!-- add movie -->
+    <div class="card bg-light text-dark">
+        <div class="card-header">
+            <h2>{{'ADD_MOVIE' | translate }}</h2>
+        </div>
+        <div class="card-body">
+            <form name="addMovieForm">
+                <div class="form-group">
+                    <label for="movieTitle">{{'MOVIE_TITLE' | translate }}</label>
+                    <input required type="text" ng-model="movieForm.title" class="form-control form-control-sm" id="movie-title"
+                        name="movieTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="movie-desc">{{'MOVIE_DESC' | translate }}</label>
+                    <input required type="text" ng-model="movieForm.description" class="form-control form-control-sm"
+                        id="movie-desc" name="movie-desc">
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-link">link</label>
+                    <input required type="text" ng-model="movieForm.link" class="form-control form-control-sm" id="movie-link"
+                        name="movie-link">
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-poster">{{'MOVIE_POSTER' | translate }}</label>
+                    <input required type="text" ng-model="movieForm.poster" class="form-control form-control-sm" id="movie-poster"
+                        name="movie-poster">
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-trailer">{{'MOVIE_TRAILER' | translate }}</label>
+                    <input required type="text" ng-model="movieForm.trailer" class="form-control form-control-sm" id="movie-trailer"
+                        name="movie-trailer">
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-hours">{{'MOVIE_HOURS' | translate }}</label>
+                    <select class="form-control form-control-sm" ng-model="movieForm.hours" id="movie-hours">
+                        <option selected>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-minutes">{{'MOVIE_MINUTES' | translate }}</label>
+                    <select class="form-control form-control-sm" ng-model="movieForm.minutes" id="movie-minutes">
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>30</option>
+                        <option>35</option>
+                        <option>40</option>
+                        <option selected>45</option>
+                        <option>50</option>
+                        <option>55</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-lang">{{'MOVIE_LANG' | translate }}</label>
+                    <select class="form-control form-control-sm" ng-model="movieForm.lang" id="movie-lang">
+                        <option selected>PL</option>
+                        <option>EN</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="movie-price">{{'MOVIE_PRICE' | translate }}</label>
+                    <input required type="text" ng-model="movieForm.price" class="form-control form-control-sm" id="movie-price"
+                        name="movie-price">
+                </div>
+
+                <button ng-disabled="addMovieForm.movieTitle.$error.required" type="button" ng-click="addMovie()" class="btn btn-primary">{{'ADD_MOVIE'
+                    | translate }}</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- all movies -->
+    <div class="card">
+        <div class="card-header">{{'ALL_MOVIES' | translate }}</div>
+        <div class="card-body">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>{{'MOVIE_POSTER' | translate }}</th>
+                        <th>{{'MOVIE_TITLE' | translate }}</th>
+                        <th>{{'MOVIE_DESC' | translate }}</th>
+                        <th>{{'MOVIE_HOURS' | translate }}</th>
+                        <th>{{'MOVIE_MINUTES' | translate }}</th>
+                        <th>{{'OPTIONS' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="movie in movies">
+                        <td><img class="movie-poster" ng-src="{{movie.poster}}" alt="poster" /></td>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.description}}</td>
+                        <td>{{movie.hours}}</td>
+                        <td>{{movie.minutes}}</td>
+                        <td><a class="btn btn-link" ng-click="removeMe($index)"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- add showing -->
+    <div class="card">
+        <div class="card-header">{{'ADD_SHOWING_TITLE' | translate }}</div>
+        <div class="card-body">
+            <form name="addShowingForm">
+                <div class="form-group">
+                    <label for="showingDate">{{'SHOWING_DATE' | translate }}</label>
+                    <input required type="date" ng-model="showingForm.date" class="form-control form-control-sm" id="showingDate"
+                        name="showingDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="showingTime">{{'SHOWING_TIME' | translate }}</label>
+                    <input required type="time" ng-model="showingForm.time" class="form-control form-control-sm" id="showingTime"
+                        name="showingTime" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="showingMovie">{{'MOVIE_TITLE' | translate }}</label>
+                    <select required class="form-control form-control-sm" ng-model="showingForm.movie" id="showingMovie"
+                    ng-options="option.title for option in movies track by option.id">
+                        
+                    </select>
+                </div>
+                <div>{{showingForm.movie}}</div>
+
+                <div class="form-group">
+                    <label for="showingRoom">{{'ROOM' | translate }}</label>
+                    <select required class="form-control form-control-sm" ng-model="showingForm.room" id="showingRoom"
+                    ng-options="option.name for option in rooms track by option.id">
+                        
+                    </select>
+                </div>
+                <button type="button" ng-click="addShowing()" class="btn btn-primary">{{'ADD_SHOWING'
+                    | translate }}</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

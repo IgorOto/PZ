@@ -1,0 +1,19 @@
+<div class="container">
+    <h4 mt-10>{{'MY_TICKETS' | translate }}</h4>
+    <table class="table table-hover">
+        <tbody>
+            <tr ng-repeat="ticket in tickets">
+                <td><img class="movie-poster" ng-src="{{ticket.showing.movie.poster}}" alt="poster" /></td>
+                <td><i class="far fa-clock"></i> {{ticket.showing.datetime | date : "d.MM.yyyy H:mm"}}</td>
+                <td><strong>{{ticket.showing.movie.title}}</strong></td>
+                <td><i class="fas fa-door-open"></i> {{ticket.seat.room.name}}</td>
+                <td>{{ticket.seat.row}} {{ticket.seat.col}}</td>
+                <td>{{ ticketTypeTranslate(ticket) | translate }}</td>
+                <td>
+                    <a class="mr-10" ng-href="/print/{{ticket.id}}" target="_blank"><i class="fas fa-print"></i></a>
+                    <button ng-click="removeTicket($index)"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

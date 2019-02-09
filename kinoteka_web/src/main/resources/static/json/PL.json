@@ -1,0 +1,10 @@
+{
+  "login":"Zaloguj",
+  "register":"Zarejestruj",
+  "title": "kino",
+  "username": "Użytkownik",
+  "password": "Hasło",
+  "loginErrorMsg": "Błędny login lub hasło!",
+  "registerErrorMsg": "Użytkownik już istnieje!",
+  "registerSuccessMsg": "Zarejestrowano!"
+}

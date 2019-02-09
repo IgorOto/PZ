@@ -1,0 +1,10 @@
+{
+  "login":"Log In",
+  "register":"Register",
+  "title": "movie theatre",
+  "username": "Username",
+  "password": "Password",
+  "loginErrorMsg": "Wrong password you cock sucka modtah fucka!",
+  "registerErrorMsg": "Username taken!",
+  "registerSuccessMsg": "Registered!"
+}

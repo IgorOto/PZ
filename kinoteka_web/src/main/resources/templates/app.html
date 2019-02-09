@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="Application" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/app.css}" />
+    <script src="https://cdn.rawgit.com/SlexAxton/messageformat.js/v1.0.2/messageformat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-cookies.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-sanitize.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate/2.18.1/angular-translate.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-interpolation-messageformat/2.18.1/angular-translate-interpolation-messageformat.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-storage-cookie/2.18.1/angular-translate-storage-cookie.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-storage-local/2.18.1/angular-translate-storage-local.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-loader-url/2.18.1/angular-translate-loader-url.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-loader-static-files/2.18.1/angular-translate-loader-static-files.js"></script>
+    <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate-handler-log/2.18.1/angular-translate-handler-log.js"></script>
+    <script th:src="@{/js/app.js}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script th:src="@{/js/auth-service.js}"></script>
+    <script th:src="@{/js/date-service.js}"></script>
+    <script th:src="@{/js/movie-service.js}"></script>
+    <script th:src="@{/js/settings-service.js}"></script>
+    <script th:src="@{/js/room-service.js}"></script>
+    <script th:src="@{/js/showing-service.js}"></script>
+    <script th:src="@{/js/ticket-seat-service.js}"></script>
+    <script th:src="@{/js/auth-controller.js}"></script>
+    <script th:src="@{/js/programme-controller.js}"></script>
+    <script th:src="@{/js/account-controller.js}"></script>
+    <script th:src="@{/js/admin-controller.js}"></script>
+    <script th:src="@{/js/menu-controller.js}"></script>
+    <title>Title</title>
+</head>
+
+<body>
+    <header>
+        <div ng-include="'partials/_menu.html'"></div>
+    </header>
+    <main ng-controller="AuthController" class="w-100">
+        <div ng-view></div>
+    </main>
+</body>
+
+</html>

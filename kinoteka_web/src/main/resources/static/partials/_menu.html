@@ -1,0 +1,36 @@
+<nav ng-controller="MenuController" class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- left -->    
+    <ul class="navbar-nav">
+          <li class="nav-item active" id="programme">
+            <a class="nav-link" href="/app#/programme" ng-click="activate('programme')">{{'PROGRAMME' | translate }}</a>
+          </li>
+          <li class="nav-item" id="account">
+            <a class="nav-link" href="/app#/account" ng-click="activate('account')">{{'ACCOUNT' | translate }}</a>
+          </li>
+          <li class="nav-item" ng-if="role == 'ROLE_ADMIN'" id="admin">
+                <a class="nav-link" href="/app#/admin" ng-click="activate('admin')">{{'ADMIN_PANEL' | translate }}</a>
+            </li>
+        </ul>
+    <!-- right -->    
+        <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <div class="nav-link"><span>{{username}} | </span><a href="/logout">{{'LOGOUT' | translate }}</a></div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                    {{'SKIN' | translate }}
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" ng-click="skin(1)" >{{'SKIN_1' | translate }}</a>
+                    <a class="dropdown-item" ng-click="skin(2)">{{'SKIN_2' | translate }}</a>
+                    <a class="dropdown-item" ng-click="skin(3)">{{'SKIN_DEFAULT' | translate }}</a>
+                  </div>
+                </li>
+                <li class="nav-item active-lang" id="pl">
+                  <a class="nav-link" ng-click="changeLanguage('pl')">PL</a>
+                </li>
+                <li class="nav-item" id="en">
+                  <a class="nav-link" ng-click="changeLanguage('en')">EN</a>
+                </li>
+              </ul>
+      </nav>

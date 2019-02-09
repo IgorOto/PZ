@@ -1,0 +1,181 @@
+body{
+    header{
+        nav{
+            display: flex;
+            justify-content: space-between !important;
+
+            #pl, #en{
+                cursor: pointer;
+            }
+
+            .active-lang{
+                .nav-link{
+                    color: gold !important;
+                }
+                
+            }
+        }
+    }
+
+    .container{
+        margin-bottom: 10px;
+        #legend{
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            div{
+                padding: 10px;
+                margin-right: 5px;
+                &:nth-child(1){
+                    background-color: #ffea15;
+                }
+
+                &:nth-child(2){
+                    background-color: #eaa01f;
+                }
+
+                &:nth-child(3){
+                    background-color: #555;
+                    color: white;
+                }
+
+                &:nth-child(4){
+                    background-color: #222;
+                    color: white;
+                }
+
+                &:nth-child(5){
+                    background-color: #1f73ea;
+                }
+            }
+        }
+        .kino{
+            display: flex;
+            flex-direction: column;
+     
+            .screen{
+             height: 15px;
+             background-color: #333;
+             margin-bottom: 10px;
+     
+             
+         }
+
+         .kono-row{
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            .row-inner{
+                 width: fit-content;
+                 display: flex;
+                 .seat-k{
+                    height: 50px;
+                    background-color: #555;
+                    margin: 5px;
+                    width: 50px;
+
+                    button{
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+
+                        &.normal{
+                            background-color: #ffea15;
+                        }
+                
+                        &.discount{
+                            background-color: #eaa01f;
+                        }
+                
+                        &.myTicket{
+                            background-color: #1f73ea !important;
+                            color: white !important;
+                        }
+
+                        &:disabled,
+                        &[disabled]{
+                            background-color: #222;
+                        }
+                    }
+                   
+                }
+            }
+        }
+      
+        }
+
+        .buy-banner{
+            margin-top: 10px;
+        }
+
+        .movie-poster{
+            max-width: 100px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        #movies-top{
+            display: flex; width: 100%; flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card img{
+            height: 200px;
+            object-fit: cover;
+            object-position: 50% 0;
+        }
+
+        .buy-banner{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+       
+    }
+
+    .container-fluid{
+        margin-bottom: 10px;
+        table{
+            .movie-poster{
+                max-width: 100px;
+                max-height: 100px;
+            }
+        }
+    
+        .w-short{
+            width: 30%;
+        }
+    
+        .w-long{
+            width: 65%;
+        }
+    
+        .card{
+            margin: 0 0 0 0.5%;
+        }
+    
+        .row{
+            padding: 0.5% 0.5% 0 0;
+        }
+    }
+
+   .mr-10{
+       margin-right: 10px;
+   }
+
+   .mt-10{
+       margin-top: 10px;
+   }
+
+   .w-60{
+       width: 60% !important;
+   }
+
+}
+
+@import 'skin_one';
+@import 'skin_two';

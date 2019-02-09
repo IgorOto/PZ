@@ -1,0 +1,115 @@
+<div class="container">
+    <div id="movies-top">
+        <div ng-repeat="movie in weekMovies" class="card" style="width:33%">
+            <img class="card-img-top" ng-src="{{trustSrc(movie.poster)}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">{{movie.title}}</h4>
+                <p class="card-text">{{movie.description}}</p>
+                <div class="row">
+                    <div class="col-4">
+                        <p class="card-text"><i class="far fa-comments"></i> {{movie.lang}}</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="card-text"><i class="far fa-clock"></i> {{movie.minutes}} min</p>
+                    </div>
+                </div>
+                <div class="row mt-10">
+                    <div class="col-4">
+                        <a class="btn btn-primary" ng-click="findByMovie($index)"><i class="fas fa-search"></i>
+                            {{'VIEW' | translate }}</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{movie.link}}" target="_blank" class="btn btn-link">link</a>
+                    </div>
+                    <div class="col-4">
+                        <a href="{{movie.trailer}}" target="_blank" class="btn btn-link">{{'MOVIE_TRAILER' | translate
+                            }}</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- filter -->
+    <div class="row mt-10">
+        <div class="form-inline col-4">
+            <label for="showingDate" class=" mr-10"><i class="fas fa-table"></i> {{'SHOWING_DATE' | translate }}</label>
+            <input required type="date" ng-model="pickedDate" class="form-control w-60 form-control-sm" id="showingDate"
+                name="showingDate">
+        </div>
+        <div class="form-inline col-3">
+            <button class="btn btn-warning mr-10" ng-click="loadByDate()"><i class="fas fa-search"></i></button>
+            <button class="btn btn-warning" ng-click="setToday()"><i class="fas fa-search"></i> {{'TODAY' | translate
+                }}</button>
+        </div>
+        <div class="form-inline col-3">
+
+        </div>
+    </div>
+    <!-- showings -->
+    <div class="mt-10">
+        <table class="table table-hover" ng-repeat="date in (showings | retUniqDates)">
+            <thead>
+                <tr>
+                    <th>
+                        <h2>{{date | date : "d.MM.yyyy"}}</h2>
+                    </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="showing in showings | byDate: date">
+                    <td><img class="movie-poster" ng-src="{{showing.movie.poster}}" alt="poster" /></td>
+                    <td><strong>{{showing.movie.title}}</strong></td>
+                    <td>{{showing.movie.lang}}</td>
+                    <td><i class="far fa-clock"></i> {{showing.datetime | date : "H:mm"}}</td>
+                    <td><i class="fas fa-stopwatch"></i> {{showing.movie.minutes}} min</td>
+                    <td><i class="fas fa-door-open"></i> {{showing.room.name}}</td>
+                    <td><i class="fas fa-dollar-sign"></i> {{showing.movie.price}} PLN</td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="getSeats($index)"><i class="fas fa-angle-double-right"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- seats -->
+    <div ng-if="seats !== undefined">
+    <div class="kino">
+        <div class="screen">
+        </div>
+        <div class="kono-row" ng-repeat="row in (seats | retUniqRows)">
+            <div class="row-inner">
+                <div class="seat-k" ng-repeat="seat in seats | byRow: row">
+                    <button ng-disabled="hasTicket(seat)" ng-click="selectSeat(seat)" 
+                    ng-class="{'normal': seat.status == 'NORMAL', 'discount': seat.status == 'DISCOUNT', 'myTicket': isMyTicket(seat)}">
+                        <!-- wyswietlic klase w zaleznosci od wartosci seat.status -->
+                        {{seat.row}} {{seat.col}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="legend">
+        <div>{{'NORMAL' | translate }}</div>
+        <div>{{'DISCOUNT' | translate }}</div>
+        <div>{{'FREE' | translate }}</div>
+        <div>{{'OCCUPIED' | translate }}</div>
+        <div>{{'YOUR_TICKET' | translate }}</div>
+    </div>
+
+    <!-- buy tickets banner -->
+    <div class="buy-banner" >
+        <button class="btn btn-warning" ng-click="buyTickets()">{{'BUY_TICKETS' | translate}}</button>
+    </div>
+</div>
+
+</div>
